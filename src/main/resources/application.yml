@@ -10,14 +10,6 @@ logging:
         security: DEBUG
         oauth2: DEBUG
         autoconfigure: INFO
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://admin:Admin%40123@localhost:8761/eureka/
-  instance:
-    preferIpAddress: true
-#base:
-#  url: http://localhost:8080
 
 spring:
   application:
@@ -55,14 +47,4 @@ spring:
 base:
   url: http://localhost:8080
 
-twilio:
-  account:
-    sid: Aca29bed2d35afb5776babaaf9eedee431
-  auth:
-    token: 21dde5e39b8ca96c6141d84403816bb9
-  phone:
-    number: +19382016908
-cors:
-  allowed-origins: http://localhost:3000,http://localhost:3001
-  allowed-headers: "*"
-  allowed-methods: "*"
+
