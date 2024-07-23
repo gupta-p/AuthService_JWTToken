@@ -1,0 +1,68 @@
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    org:
+      springframework:
+        web: DEBUG
+        security: DEBUG
+        oauth2: DEBUG
+        autoconfigure: INFO
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:Admin%40123@localhost:8761/eureka/
+  instance:
+    preferIpAddress: true
+#base:
+#  url: http://localhost:8080
+
+spring:
+  application:
+    name: iaoauthserverROPC
+  main:
+    allow-circular-references: true
+  #    openfeign:
+  #      oauth2:
+  #        enabled: true
+  #        clientRegistrationId: iaoauthserver
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8080/oauth2/jwks
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test1
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      dialect: org.hibernate.dialect.MySQL8Dialect
+
+  thymeleaf:
+    enabled: true
+    cache: false
+    check-template: true
+    prefix: classpath:/templates/
+
+base:
+  url: http://localhost:8080
+
+twilio:
+  account:
+    sid: Aca29bed2d35afb5776babaaf9eedee431
+  auth:
+    token: 21dde5e39b8ca96c6141d84403816bb9
+  phone:
+    number: +19382016908
+cors:
+  allowed-origins: http://localhost:3000,http://localhost:3001
+  allowed-headers: "*"
+  allowed-methods: "*"
